@@ -1,5 +1,10 @@
 import org.springframework.cloud.contract.spec.Contract
 
+import java.text.SimpleDateFormat
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd")
+String birthDate = sdf.format(new Date())
+
 Contract.make {
 	request {
 		method 'GET'
@@ -13,7 +18,9 @@ Contract.make {
 			lastName: 'Minkowski',
 			gender: $(regex('(MALE|FEMALE)')),
 			accountNumber: $(regex(positiveInt())),
-			//birthDate: $(regex(isoDate()))
+			//birthDate: $(regex(isoDate())
+			birthDate: birthDate
+
 		])
 		headers { 
 			contentType(applicationJson())
