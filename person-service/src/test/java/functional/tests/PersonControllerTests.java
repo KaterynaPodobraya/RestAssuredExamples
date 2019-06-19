@@ -94,11 +94,6 @@ public class PersonControllerTests {
         int id = 1;
         String [] emails = new String[]{"k@mail.ru", "kateryna.podobraya@gmail.com"};
 
-        String dt = "2019-06-14 15:05:36";
-
-        System.out.println(dt);
-
-
         Response response =  RestAssured
                 .given()
                 .when().get("/{id}", id)
@@ -107,7 +102,7 @@ public class PersonControllerTests {
                 //.body("birthDate",  equalTo (new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-13")))
                 //.body("birthDate",  equalTo (personRepository.findById(2).getBirthDate()))
                 //.body("birthDate",  equalTo ("2019-06-14 15:05:36"))
-                .body("birthDate",  equalTo (dt))
+                .body("birthDate",  equalTo ("2019-06-14"))
                 .body("gender", equalTo(Gender.FEMALE.toString()))
                 .body("contact.phoneNo", equalTo("60001265"))
                 .body("contact.email", isIn(Arrays.asList(emails)))

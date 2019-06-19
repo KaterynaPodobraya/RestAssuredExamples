@@ -9,7 +9,7 @@ public class Person {
 	private Integer id;
 	private String firstName;
 	private String lastName;
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date birthDate;
 	private Gender gender;
 	private Contact contact;

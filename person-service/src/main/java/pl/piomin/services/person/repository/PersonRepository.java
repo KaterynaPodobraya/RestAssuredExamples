@@ -42,11 +42,8 @@ public class PersonRepository {
 
 	public Person fillRepository() throws ParseException {
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		Date newDate = sdf.parse("2019-06-14 15:05:36");
-
-
-		System.out.println(newDate + "Application date !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date newDate = sdf.parse("2019-06-14");
 
 		Person person = new PersonBuilder()
 				.withId(1)
